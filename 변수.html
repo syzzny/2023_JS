@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--자바스크립트-->
+    <script>
+        let num =10;
+
+        //=기호는 오른쪽에 작성된 값을 왼쪽에 할당한다
+        let numTemp = num;
+
+        //오른쪽에 식이 들어가있으면 그 내용을 다 실행하고 할당
+        let sum = numTemp+num;
+
+        //변수이름을 통해서 값을 꺼내서 사용가능
+        console.log(num+10);
+
+        <!--실습-->
+        let name = "홍길동";
+        let age = "20";
+        let number = "010-123-4567"
+
+        let name2 = "성춘향";
+        name = name2;
+
+        console.log("이름:"+name+" 나이:"+age+" 전화번호:"+number);
+    
+        //복합대입연산자
+        let numOpar = 0;
+        //현재 변수에 1을 더해줄때
+        newOpar = newOpar = 1; //numberOpar: 1
+        
+        //복합 대입연산자를 이용하여 1 더해줌
+        numOpar += 1; //nunOpar :2
+        console.log(numOpar);
+
+        numOpar *=3;
+        console.log(numOpar);
+
+        //증감연산자: 1씩 감소, 증가할때 사용
+        numOpar++;
+        console.log(numOpar);
+
+        //후위 연산자: 가장 마지막에 계산
+        console.log(numOpar++);
+        console.log(numOpar);
+
+        //전위 연산자: 가장 처음에 계산
+        console.log(++numOpar);
+        console.log(numOpar);
+
+        //일반 계산식과 함께 사용할때도 가장 먼저 
+        //실행순서 1)++numOpar 2)/5 3)console.log()
+        console.log(++numOpar/5);
+
+        let sumNum =0;
+        sumNum += 1;
+        sumNum++;
+        console.log(sumNum);
+
+        sumNum -=1;
+        sumNum--;
+        console.log(sumNum);
+
+        
+
+    </script>
+</body>
+</html>
