@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>점수 결과입니다.</h1>
+    <p id="myscore">점수결과</p>
+    <script>
+        let score = prompt("점수를 입력해주세요");
+
+        document.getElementById("myscore").innerHTML=`${score}`;
+
+        if(score>=60){
+            document.getElementById("myscore").innerHTML="true";
+        }
+        else{
+            document.getElementById("myscore").innerHTML="false";
+        }
+    </script>
+</body>
+</html>

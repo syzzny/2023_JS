@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--값을 출력할 html-->
+    <h1 id="greeting">00님 오신것을 환영합니다</h1>
+    <p>홈페이지에 방문한것을 환영합니다</p>
+    <script>
+        //1. prompt 값을 입력받음
+        let nickname = prompt("닉네임을 입력해주세요");
+
+        //2. 입력받는 값은 h1 id를 찾아서 출력
+        document.getElementById("greeting").innerHTML=`${nickname}`+"님 오신것을 환영합니다";
+
+        //태그를 찾기위해서 querySelctor 사용가능
+        //css의 선택자를 통해서 찾을수있다
+        //id="greeting"의 형제인 p태그 찾기
+        //~이나 +로 형제태그 찾을수있음
+        document.querySelector("#greeting+p").innerHTML="querySelctor를 이용";
+    </script>
+</body>
+</html>
