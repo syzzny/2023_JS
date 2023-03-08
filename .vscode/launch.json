@@ -7,8 +7,6 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open 변수.html",
-            "file": "d:\\리액트_손예진\\JS\\변수.html"
         }
     ]
 }
