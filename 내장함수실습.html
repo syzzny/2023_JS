@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 나이를 입력하면 태어난 년도 출력
+
+        // let age = prompt("나이 입력");
+        let age = parseInt(prompt("나이 입력"));
+        // let year = 2023 + 1-parseInt(age);
+        while (isNaN(age)){                              // 입력한게 숫자값이 아닌 경우
+            alert ("다시 입력해주세요");
+            age = parseInt(prompt("나이 입력"));
+        }
+        let year = 2023+1-age;
+        document.write("태어난 년도: "+year);
+        
+    </script>
+</body>
+</html>
