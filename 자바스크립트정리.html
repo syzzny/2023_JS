@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 자바스크립트 정리(조건~객체) */
+        // for 1-10까지 출력
+        for (let i = 10; i >= 1; i--) {
+            console.log(i);
+        }
+
+        // 배열의 내용을 for of를 이용하여 출력
+        let numArray = [1, 2, 3, 4];
+        for (let num of numArray) {
+            console.log(num);
+        }
+        // for in 배열의 값을 출력하기
+        let flowerArray = ["해바라기", "튤립", "장미"];
+        for (let i in flowerArray) {
+            console.log(flowerArray[i]);
+        }
+
+        // 제곱을 출력하는 식
+        // 같은 수를 여러번 곱하는 것
+        // 여러번 반복 > 반복문
+        let a = 2; // 첫번째 값
+        let b = 3; // 두번째 값
+        let result = 1;
+
+        for (let i = 0; i < b; i++) {
+            // result = a*a;
+            result = result * a;
+        }
+        console.log(result);
+
+        //////////////////
+        function power(a, b = 2) {
+            let result = 1;
+            for (let i = 0; i < b; i++) {
+                //result *= a;
+                result = result * a;
+            }
+            return result;
+        }
+
+        //////////////////////
+        const myStorage = {
+            car: {
+                inside: {
+                    glovebox: "maps",
+                    passengerseat: ["first", "second"]
+                },
+                outside: {
+                    trunk: "jack"
+                }
+            }
+        };
+
+        myStorage.glovebox;
+
+
+        function User(id,money){
+            this.money = money;
+            this.buyList=[];
+            this.charge = function(plusMoney){
+                return this.money += plusMoney
+            }
+            this.buy = function(product){
+                // user의 money에서 prooduct.getPay() 값 계산
+                // this = User
+                this.money -= product.getPay();
+                // product.name의 값을 buyList 배열의 메소드인 push()에 추가
+                // 미리만들어둔 객체의 메소드나 속성을 사용할 수 있다
+                this.buyList.push(product.name);
+            }
+            let harry = new User("harry",10000);
+        }
+    </script>
+</body>
+
+</html>
