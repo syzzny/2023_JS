@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 화살표 함수: 익명함수를 더 짧게 표현한 함수 */
+        // function 이라는 키워드 대신에 => 기호로 사용
+        
+        let hi = () => {
+            document.write("Hello<br>");
+        }
+        hi();
+        
+        // 매개변수의 값이 1개일 경우 -> ()없이 매개변수 이름 사용가능
+        // 한줄로 작성할때 {}없이 사용가능
+        let introName=name=>document.write(name);
+        introName("Cake<br>");
+
+
+        // return 계산식 하나가 들어가는 함수의 경우
+        // 화살표함수를 사용하면 한줄로 작성할 수 있다
+        // {}없이 작성하면 값의 결과는 자동으로 return에 들어간다
+        // 삼항연산자를 사용한 홀수 짝수
+        let oddEvenCheckOper =num => num%2 == 0 ? "짝수" : "홀수";
+        document.write(oddEvenCheckOper(1)+"<br>");
+
+        let oddEvenCheck = num => {
+            if(num%2==0){
+                return "짝수";
+            }
+            else{
+                return "홀수";
+            }
+        }
+
+        // 화살표 함수 실습
+        let subArrow =(num1, num2) => num1-num2
+        document.write(subArrow(5,1));
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* 기본 태그 디자인 */
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000
+}
+
+/* tap_menu */
+.tab_menu{
+    margin: 10px;
+}
+
+/* tap_menu의 list의 li들을 나열 */
+.tab_menu .list{
+    display: flex;  /* 옆으로 나열 */
+    /* justify-content: space-evenly;   전체 화면으로 사용할때 */
+    height: 200px;  /* 위치 공간을 잡아주기 위함 */
+}
+
+/* a버튼 */
+.tab_menu .list li .btn{
+    padding: 0px 5px;
+    font-size: 1.2rem;
+}
+
+/* a버튼 눌렀을때 디자인 */
+.tab_menu .list li.on .btn{
+    color:whitesmoke;
+    background-color: teal;
+}
+
+/* 첫번째 contents만 노출
+.tab_menu .list li .content.on{
+    display: block;
+    width: 300px;
+    height: 150px;
+    background-color: thistle;
+} */
+
+
+/* contents */
+.tab_menu .list li .content{
+    display: none;
+    position: absolute;
+    left: 0;   /* 지금은 tap 하나만 구현이라 사용*/
+    margin-left: 10px;  /* 감싸고있는 margin값 추가 */
+    position: absolute;  /* 위치 공간이 차지되지않음 */
+    width: 500px;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: thistle;
+}
+
+/* 버튼 눌렀을때 보이는 화면 */
+.tab_menu .list li.on .content{
+    display: block;
+}
+
+
+
+
+
+.btn_list li{
+    float: left;
+    background-color: aliceblue;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+.btn_list li.on{
+    background-color: powderblue ;
+}
+.btn_list li:hover{
+    font-weight: bold;
+    background-color: powderblue;
+}
+.btn_list li a{
+    line-height: 50px;
+}
+.content{
+    clear: both;
+}
+.content_img{
+    width: 900px;
+    height: 400px;
+    background-color: aliceblue;
+    display: none;
+}
+.content_img.on{
+    display: block;
+    background-color: powderblue;
+}

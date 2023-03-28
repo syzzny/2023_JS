@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(i=10;i>0;i--){
+            document.write("2*"+i+"="+(2*i)+"<br>");
+        }
+
+        // 1이 아닌 값을 증가 감소할때
+        for (let i=0; i<10; i+=3){
+            document.write(`<p>${i}</p>`)
+        }
+        document.write("<hr>")
+        //for문과 배열
+        // in: 배열의 요소갯수 만큼 반복
+        let numbers = ["일","이","삼"];
+        for(i in numbers){
+            //i의값은 인덱스의 값
+            document.write(`${i}`);
+            // numbers[인덱스]를 통해 배열안의 값을 가져올 수 있다.
+            document.write(`<p>${numbers[i]}</p>`);
+        }
+        document.write(`<p>배열의 길이: ${numbers.length}</p>`);
+
+        // 배열의 길이로 반복
+        // 1. 반복횟수: 배열의 길이(배열.length)
+        // 2. 초기값: 0, 증가(++), 조건식: i<배열.length
+        for(let i=0; i<numbers.length; i++){
+            document.write(`<p>${i}</p>`);
+            document.write(`<p>${numbers[i]}</p>`);
+        }
+        document.write("<hr>")
+        // of: 배열의 값을 가져와서 반복
+        for(number of numbers){
+            document.write(`<p>${number}</p>`);
+        }
+
+        /* 배열과 반복문 */
+        let scores=[20,40,50,60,70];
+        //in-index
+        for(i in scores){
+            document.write(`<p>${scores[i]}</p>`);
+            // 조건문: 변수(scores[i]), 조건식(>=60)
+            if(scores[i]>=60){
+                document.write(`<p>${scores[i]}점 합격</p>`);
+            }
+            else{
+                document.write("불합격");
+            }
+        }
+        document.write("<hr>");
+        for(let i=0; i<scores.length; i++){
+            // 조건문: 변수(scores[i]), 조건식(>=60)
+            if(scores[i]>=60){
+                document.write(`<p>${scores[i]}점 합격</p>`);
+            }
+            else{
+                document.write(`<p>불합격</p>`);
+            }
+        }
+        // 3)of - 배열안의 값
+        for(score of scores){
+            document.write(`<p>${score}</p>`);
+            if(score>=60){
+                document.write(`<p>${score}점 합격</p>`);
+            }
+            else{
+                document.write(`<p>불합격</p>`)
+            }
+        }
+        /*배열의 반복문의 in과 of의 차이*/
+        // in 인덱스를 사용: 배열의 각 값에 직접접근
+        // of 값을 할당받아옴: 배열의 값에 직접 접근 X 
+
+        let students = ["홍길동", "장발장"];
+        students = "성춘향";
+        document.write(`<p>${students}</p>`);
+        for(student of students){
+            student = "이름 없음";
+        }
+        document.write(`<p>${students}</p>`);
+        for(let i in students){
+            // 배열 안의 값을 수정
+            students[i]="이름 없음"
+        }
+        document.write(`<p>${students}</p>`);
+
+        /* 반복문과 조건문 실습 */
+        // 1~100까지 짝수만 출력하세요
+        // 1~50까지 7의 배수만 출력하세요
+
+        for(i=0;i<100;i++){
+            if(i%2==0){
+                document.writeln(i);
+            }
+        }
+
+        document.write("<br>");
+
+        for(i=0;i<50;i++){
+            if(i%7==0){
+                document.writeln(i);
+            }
+        }
+
+        document.write("<br>");
+
+        /* 중첩반복문 */
+        // for문안에 for문 사용
+        for(let i=0; i<3; i++){
+            document.write(`<p>${i}</p>`)
+            for(let j=0; j<2; j++){
+                document.write(`<span>(i:${i},j:${j}) </span>`);
+            }
+            document.write("<br>");
+        }
+
+        /* 중첩배열 */
+        let array = [[1,2],[3,4],[5,6]];
+        // 중첩배열을 사용할때, 바깥배열의 요소의 인덱스를 확인
+        // 안쪽 배열의 요소를 인덱스를 확인하여 가장 안쪽의 배열 요소 인덱스를 확인하여 값을 가져올 수 있다
+
+        // 중첩배열과 반복문
+        for(let i=0;i<3;i++){
+            for(let j=0;j<2;j++){
+                document.write(`<span>${array[i][j]}</span>`);
+            }
+            document.write("<br>");
+        }
+
+        // 중첩 for문 실습
+        for(i=2;i<10;i++){
+            document.write("<"+i+"단 구구단> <br>");
+            for(j=1;j<10;j++){
+                document.write(i+"*"+j+"="+(i*j)+"<br>");
+            }
+        }
+
+
+
+        // for 문 연습 (평균값 구하기)
+        // 반복: 배열의 개수
+        let jsscores = [60,70,80,90,40,70,70];
+        let sum=0;
+        for(i=0; i<jsscores.length; i++){
+            //document.write(score[i]);
+            sum += jsscores[i];
+        }
+        document.write(`<p>${sum/jsscores.length}</p>`);
+
+
+
+        // 1-100까지의 수 중 홀수만 모두 더한 값을 출력
+        let oddSum= 0;
+        for(i=1;i<=100;i++){
+            if(i%2==1){
+                oddSum += i;
+            }
+        }
+        document.write(oddSum);
+
+        document.write("<br>");
+        // 1-100까지 3의 배수와 5의 배수의 합을 출력 (조건이 두개일때 논리연산자 사용)
+        // 반복: 1-100 조건: i%3 == 0, i%5 == 0 / 참일때 숫자들을 합함
+        let sum2=0;
+        for(let i=1; i<=100; i++){
+            if(i%3==0 || i%5==0){
+                sum2+=i;
+            }
+        }
+        document.write(sum2);
+
+
+        document.write("<br>");
+        let sum3=0;
+        for(let i=1; i<=100; i++){
+            if(i%3 ==0){
+                sum3 +=i;
+            }
+            else if(i%5==0){
+                sum3 +=i;
+            }
+        }
+        document.write(sum3);
+    </script>
+</body>
+</html>

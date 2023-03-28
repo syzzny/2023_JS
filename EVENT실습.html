@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="printTest()" id="btn2">CLICK!</button>
+    <p id="p1" onmouseenter="changeColor()">Hello</p>
+    <p id="p2" onmouseleave="changeColor2()">WELCOME</p>
+    <p id="p3" onmouseenter="changeColor3()" onmouseleave="changeColor4()">My Home</p>
+    
+    <script>
+        function printTest(){
+            let button = document.querySelector("#btn2");
+            button.innerHTML="Hi~!"
+        }
+        function changeColor(){
+            let p1 = document.querySelector("#p1");
+            p1.style.color="pink";
+        
+        }
+        function changeColor2(){
+            let p2 = document.querySelector("#p2");
+            p2.style.color="green";
+        }
+        function changeColor3(){
+            let p3 = document.querySelector("#p3")
+            p3.style.color="red";
+        }
+        function changeColor4(){
+            let p3 = document.querySelector("#p3")
+            p3.style.color="blue";
+        }
+
+    </script>
+</body>
+</html>

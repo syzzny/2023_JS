@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/변수의 적용범위.js"></script>
+    <script>
+        document.write("안녕<br>");
+        document.write(name+"<br>");
+        // 스크립트 안에 바로 작성한 경우
+        // 어느 공간에서도 불러올 수 있다: 전역변수
+
+        // 전역변수를 블록내부: for/if {}
+        if(true){
+            document.write("블록내부의 name"+name+"<br>");
+        }
+
+        //전역변수를 함수 내부에서 사용
+        function printName(){
+            document.write("함수내부의 전역 "+name+"<br>");
+        }
+        printName();
+
+        // 전역(script에 바로 선언한) 사용한 변수는 어느 공간에서도 사용할 수 있다
+        // let name="예진"; -> 먼저 확인한 js파일에서 사용중이라 오류
+        // 지역변수: 함수 내부, 블록에 선언된 변수
+        // 블록에 선언한 지역변수
+        for(let i=0; i<5; i++){
+            document.write(i);
+        }
+        // document.write(i); -> i는 블록내부에 선언되었기 때문에 밖에서는 찾을수없다.
+
+        // 함수안에 선언된 지역변수
+        function numberPrint(){
+            let number = 10;
+            document.write("<br>"+number+"<br>");
+        }
+        numberPrint();
+        // document.write(number); -> 함수안에서 let으로 정의한 변수는 함수밖에서 사용불가
+
+        // 전역변수의 이름과 지역변수의 이름이 같을때 무엇을 먼저 가져오는가?
+        let text = "전역변수";
+        if (true){
+            // 블록, 함수에서 동일한 이름을 가지고 있다면 지역변수 값을 먼저 들고온다.
+            let text = "지역변수";
+            document.write(text);
+        }
+        document.write(text+"<br>");
+
+        //////////////////
+        /* var: 변수를 만드는 키워드 */
+        // 동일한 이름이 있어도 변수 만들 수 있다
+        var book = "흥부놀부";
+        document.write(book+"<br>");
+
+        var bookTitle=["흥부놀부","자바스크립트 입문"];
+        for(let i=0; i<bookTitle.length; i++){
+            document.write(bookTitle+"<br>");
+        }
+        /* 다른 js에서 동일한 이름을 쓰고있어도 새로만드는 변수처럼 쓸수가 있어서 변수가 새로운 변수인지
+        알수없다 그래서 var 보다 let을 이용해서 작성 */
+
+        ////////////////// 변수의 적용범위 실습 1/////////////////
+        let maxCount = 10;
+        for(let checkCount=1; checkCount<= maxCount; checkCount++){
+            document.write(maxCount+"중의 "+checkCount+"<br>");
+        }
+    </script>
+</body>
+</html>

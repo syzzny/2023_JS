@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 함수표현식 실습
+        let sub = function(){
+            let num1, num2;
+            let result = num1-num2;
+            document.write(result+"<br>");
+
+        }
+        sub(5,10);
+
+        // 함수표현식 실습(답)
+        let sub2 = function(num1, num2){
+            return num1-num2;
+        }
+        document.write(sub2(5,10)+"<br>");
+
+
+        // 숫자를 넣었을때 홀수인지 짝수인지 알려주는 함수 표현식 작성 
+        // 함수 표현식 작성: oddEvenCheck
+        // oddEvenCheck(3) > return "홀수";
+        // oddEvenCheck(6) > return "짝수";
+        let num =4;
+        let result="";
+        if(num%2==0){
+            result="짝수";
+        }
+        else{
+            result="홀수";
+        }
+        document.write(result+"<br>");
+
+        // 함수로 작성
+        let oddEvenCheck = function(num){
+            if(num%2==0){
+                return "짝수";
+            }
+            else{
+                return "홀수";
+            }
+        }
+        document.write(oddEvenCheck(5)+"<br>");
+
+        // 삼항연산자를 사용한 홀수 짝수
+        let oddEvenCheckOper = function(num){
+            return num%2==0 ? "짝수" : "홀수";
+        }
+        document.write(oddEvenCheckOper(7)+"<br>");
+    </script>
+</body>
+</html>

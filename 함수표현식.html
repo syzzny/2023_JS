@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 익명함수(무명함수) : 함수의 이름이 없는 함수 */
+        /* 함수 표현식: 익명함수를 변수에 담아서 사용하는 함수*/
+        // hello를 출력하는 함수
+        let hi= function(){
+            document.write("hello<br>");
+        }
+        hi();
+
+        // print() 함수: document.write('<p></p>');
+        // 선언문 함수에서 이름을 변수로 만들어서 사용
+        let print = function(string){
+            document.write(string);
+        }
+        print("rabbit<br>");
+
+        // 함수 선언문은 모든곳에서 사용가능
+        // 함수 표현식은 let의 특성에 따라, 특정 블록안에서만 사용할수 있다.
+        for(i=0;i<3;i++){
+            let hello = function(){
+                document.writeln("Hi<br>");
+            }
+            hello();
+        }
+        // print(i); - i는 for문에서만 사용
+        // hello(); - hello는 for문에서만 사용
+
+
+    
+    </script>
+</body>
+</html>
