@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class</h1>
+    <p>객체지향언어</p>
+    <p>ES6에서 추가된 내용</p>
+    <P>추가되기전에는 생성자 함수를 사용해서 객체 생성</P>
+
+    <script>
+        /*class*/
+        class Myclass{
+            // 속성 : constructor()를 통해 값을 받아와서 할당
+            constructor(name){
+                this.name = name;
+                this.money = 0;
+            }
+            // 메소드 : 메소드 이름() {}
+            sayName(){
+                alert(this.name);
+            }
+            setMoney(num){
+                this.money = num;
+            }
+        }
+        // class를 이용한 객체 생성
+        const myclass = new Myclass("green");
+        myclass.sayName(); 
+        console.log(myclass);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.box{
+    height: 200px;
+    background-color: purple;
+    border: 2px solid black;
+}
+.relative{
+    position: absolute;
+    bottom: 0;
+}
+.absolute{
+    position: absolute;
+    bottom: 0;
+}
+.box-small{
+    height: 100px;
+    background-color: steelblue;
+}

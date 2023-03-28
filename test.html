@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guess the Number Game</title>
+</head>
+
+<body>
+    <h1>Guess the Number Game</h1>
+
+    <p>Enter a maximum number:</p>
+    <input type="number" id="max-num" />
+
+    <p>Enter your guess:</p>
+    <input type="number" id="user-guess" />
+
+    <button onclick="startGame()">Start Game</button>
+
+    <p id="user-guess-display"></p>
+    <p id="answer-display"></p>
+    <p id="guess-result"></p>
+
+    <script>
+        function startGame() {
+            // 사용자로부터 범위를 입력 받습니다.
+            const maxNum = parseInt(document.getElementById("max-num").value);
+
+            // 사용자로부터 맞추려는 숫자를 입력 받습니다.
+            const userGuess = parseInt(document.getElementById("user-guess").value);
+
+            // 입력값이 음수인 경우, 오류 메시지를 출력하고 프로그램을 종료합니다.
+            if (maxNum < 0 || userGuess < 0) {
+                document.getElementById("guess-result").innerHTML =
+                    "Error: The input numbers must be non-negative.";
+                return;
+            }
+
+            // 무작위 숫자를 생성합니다.
+            const answer = Math.floor(Math.random() * (maxNum + 1));
+
+            // 사용자가 입력한 숫자와 무작위로 생성된 숫자를 함께 출력합니다.
+            document.getElementById("user-guess-display").innerHTML =
+                "Your guess: " + userGuess;
+            document.getElementById("answer-display").innerHTML =
+                "Random number: " + answer;
+
+            // 사용자가 입력한 숫자를 맞출 때까지 게임을 진행합니다.
+            if (userGuess === answer) {
+                document.getElementById("guess-result").innerHTML = "You win!";
+            } else {
+                document.getElementById("guess-result").innerHTML = "You lose!";
+            }
+        }
+    </script>
+</body>
+
+</html>
